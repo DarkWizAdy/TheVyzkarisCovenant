@@ -86,6 +86,15 @@ a:hover { color: #f2ede0; }
   font-weight: 600;
 }
 
+.brand .motto {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  color: var(--gold-dim);
+  font-size: 0.98rem;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.9rem;
+}
+
 .brand .subtitle {
   color: var(--gold);
   letter-spacing: 0.35em;

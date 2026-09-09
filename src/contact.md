@@ -8,7 +8,7 @@ layout: layouts/base.njk
 <h1 class="page-title">Contact</h1>
 <p>Send a message and it will reach the Covenant directly.</p>
 
-<form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<form class="contact-form" action="https://formspree.io/f/xjyvjkbg" method="POST">
   <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
   <div>
     <label for="name">Name</label>
