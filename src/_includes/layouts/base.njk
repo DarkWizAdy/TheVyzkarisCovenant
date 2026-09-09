@@ -45,7 +45,7 @@
   {{ content | safe }}
 </main>
 
-<footer>{% if site.motto %}{{ site.motto }}{% else %}Order within chaos <span>&middot;</span> Strength through unity{% endif %}</footer>
+<footer>{% if site.motto %}<span class="motto">{{ site.motto }}</span>{% else %}Order within chaos <span>&middot;</span> Strength through unity{% endif %}</footer>
 
 <script src="{{ '/assets/js/nav.js' | url }}"></script>
 </body>
