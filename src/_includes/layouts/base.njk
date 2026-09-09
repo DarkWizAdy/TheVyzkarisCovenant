@@ -15,7 +15,6 @@
     <a class="brand" href="{{ '/' | url }}">
       <span class="sigil"></span>
       <h1>The Vyzkaris Covenant</h1>
-      {% if site.motto %}<p class="motto">{{ site.motto }}</p>{% endif %}
       <p class="subtitle">Order within chaos &middot; Strength through unity</p>
     </a>
   </div>
@@ -46,7 +45,7 @@
   {{ content | safe }}
 </main>
 
-<footer>Order within chaos <span>&middot;</span> Strength through unity</footer>
+<footer>{% if site.motto %}{{ site.motto }}{% else %}Order within chaos <span>&middot;</span> Strength through unity{% endif %}</footer>
 
 <script src="{{ '/assets/js/nav.js' | url }}"></script>
 </body>
