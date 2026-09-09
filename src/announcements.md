@@ -1,12 +1,22 @@
 ---
-title: The Annals
+title: Announcements
 description: A record of the Covenant's founding, its laws, its wars, and its people — kept as they happen, not rewritten after.
 layout: layouts/base.njk
 ---
 
 <p class="page-eyebrow">Chronological Record</p>
-<h1 class="page-title">The Annals</h1>
+<h1 class="page-title">Announcements</h1>
 <p>A record of the Covenant's founding, its laws, its wars, and its people — kept as they happen, not rewritten after.</p>
+
+<div class="cta-box">
+<p class="cta-box-title">Submit a Record</p>
+{% if site.recordsFormUrl %}
+<p>Citizens may propose a new record for the Announcements below.</p>
+<a class="cta-button" href="{{ site.recordsFormUrl }}" target="_blank" rel="noopener">Open the Form</a>
+{% else %}
+<p class="empty-state">The submission form is being set up. Check back soon.</p>
+{% endif %}
+</div>
 
 <div class="section-label">Entries</div>
 

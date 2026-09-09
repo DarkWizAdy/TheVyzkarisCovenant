@@ -291,7 +291,44 @@ main h2 {
   border-radius: 2px;
 }
 
-/* ---------- Annals timeline ---------- */
+/* ---------- Call-to-action box ---------- */
+
+.cta-box {
+  border: 1px solid var(--gold-dim);
+  background: var(--bg-panel);
+  padding: 1.5rem 1.75rem;
+  margin: 0 0 2.5rem;
+}
+
+.cta-box-title {
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.6rem;
+}
+
+.cta-box p { margin: 0 0 1rem; }
+.cta-box .empty-state { margin: 0; }
+
+.cta-button {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: 'Courier New', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.6rem;
+}
+
+.cta-button:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+/* ---------- Announcements timeline ---------- */
 
 .timeline {
   position: relative;

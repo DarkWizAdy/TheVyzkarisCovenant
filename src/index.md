@@ -15,9 +15,9 @@ wide: true
 <h2>Explore</h2>
 
 <div class="quick-links">
-  <a class="quick-link" href="{{ '/annals/' | url }}">
+  <a class="quick-link" href="{{ '/announcements/' | url }}">
     <span class="ql-label">Record</span>
-    The Annals
+    Announcements
   </a>
   <a class="quick-link" href="{{ '/governance/charter/' | url }}">
     <span class="ql-label">Founding</span>

@@ -1,6 +1,6 @@
 [
   { "label": "Home", "url": "/" },
-  { "label": "The Annals", "url": "/annals/" },
+  { "label": "Announcements", "url": "/announcements/" },
   {
     "label": "Governance",
     "children": [
