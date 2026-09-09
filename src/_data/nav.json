@@ -1,0 +1,20 @@
+[
+  { "label": "Home", "url": "/" },
+  { "label": "The Annals", "url": "/annals/" },
+  {
+    "label": "Governance",
+    "children": [
+      { "label": "Charter", "url": "/governance/charter/" },
+      { "label": "Structure", "url": "/governance/structure/" },
+      { "label": "Legion", "url": "/governance/legion/" },
+      { "label": "Territory", "url": "/governance/territory/" },
+      { "label": "Diplomacy", "url": "/governance/diplomacy/" },
+      { "label": "Judiciary", "url": "/governance/judiciary/" },
+      { "label": "Recruitment", "url": "/governance/recruitment/" },
+      { "label": "Enterprise", "url": "/governance/enterprise/" }
+    ]
+  },
+  { "label": "Resources", "url": "/resources/" },
+  { "label": "Gallery", "url": "/gallery/" },
+  { "label": "Contact", "url": "/contact/" }
+]

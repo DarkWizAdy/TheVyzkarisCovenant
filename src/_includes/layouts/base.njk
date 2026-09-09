@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title }} — The Vyzkaris Covenant</title>
+<meta name="description" content="{{ description or 'The Vyzkaris Covenant — order within chaos, strength through unity.' }}">
+<link rel="stylesheet" href="{{ '/assets/css/theme.css' | url }}">
+</head>
+<body>
+<div class="backdrop"></div>
+
+<header class="site-header">
+  <div class="header-top">
+    <a class="brand" href="{{ '/' | url }}">
+      <span class="sigil"></span>
+      <h1>The Vyzkaris Covenant</h1>
+      <p class="subtitle">Order within chaos &middot; Strength through unity</p>
+    </a>
+  </div>
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <ul class="nav-list" id="nav-list">
+        {% for item in nav %}
+          {% if item.children %}
+            <li class="has-children">
+              <span class="nav-label">{{ item.label }}</span>
+              <ul class="submenu">
+                {% for child in item.children %}
+                  <li><a href="{{ child.url | url }}" {% if page.url == child.url %}class="active"{% endif %}>{{ child.label }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            <li><a href="{{ item.url | url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.label }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main{% if wide %} class="wide"{% endif %}>
+  {{ content | safe }}
+</main>
+
+<footer>Order within chaos <span>&middot;</span> Strength through unity</footer>
+
+<script src="{{ '/assets/js/nav.js' | url }}"></script>
+</body>
+</html>

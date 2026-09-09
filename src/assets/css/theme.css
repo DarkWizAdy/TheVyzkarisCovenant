@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap');
+
+:root {
+  --bg: #0a0a0d;
+  --bg-panel: #111116;
+  --border: #26262e;
+  --gold: #c9a86a;
+  --gold-dim: #8a7248;
+  --text: #e4e2db;
+  --text-dim: #8b8a8f;
+  --red: #8a2f2f;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at top, rgba(201, 168, 106, 0.06), transparent 60%),
+    linear-gradient(180deg, #0a0a0d 0%, #0d0d11 100%);
+}
+
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: #f2ede0; }
+
+/* ---------- Header / Nav ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 3.5rem 1.5rem 2rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.sigil {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1.25rem;
+  border: 1.5px solid var(--gold-dim);
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sigil::after {
+  content: 'V';
+  transform: rotate(-45deg);
+  font-family: 'Cinzel', 'Georgia', serif;
+  font-size: 1.3rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.brand h1 {
+  font-family: 'Cinzel', 'Trajan Pro', 'Georgia', serif;
+  letter-spacing: 0.18em;
+  font-size: 1.7rem;
+  margin: 0 0 0.4rem;
+  color: #f2ede0;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.brand .subtitle {
+  color: var(--gold);
+  letter-spacing: 0.35em;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* nav */
+
+.site-nav {
+  position: relative;
+  border-top: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--gold);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  padding: 0.5rem 1rem;
+  margin: 0.75rem 0;
+  cursor: pointer;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.nav-list > li {
+  position: relative;
+}
+
+.nav-list a,
+.nav-list .nav-label {
+  display: block;
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 0.75rem 0.9rem;
+}
+
+.nav-list a:hover,
+.nav-list a.active,
+.nav-list li:hover > .nav-label,
+.nav-list li.has-children:hover > .nav-label {
+  color: var(--gold);
+}
+
+.nav-list a.active { color: var(--gold); }
+
+.nav-label {
+  cursor: default;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nav-label::after {
+  content: '▾';
+  font-size: 0.6rem;
+}
+
+.submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0.4rem 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 12rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  display: none;
+  z-index: 20;
+}
+
+.nav-list li.has-children:hover .submenu,
+.nav-list li.has-children.open .submenu {
+  display: block;
+}
+
+.submenu a {
+  padding: 0.6rem 1rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+  .nav-toggle { display: inline-block; }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    padding-bottom: 1rem;
+  }
+
+  .nav-list.open { display: flex; }
+
+  .nav-list a, .nav-list .nav-label {
+    padding: 0.65rem 0.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .submenu {
+    position: static;
+    border: none;
+    background: none;
+    padding-left: 1rem;
+  }
+
+  .nav-list li.has-children .submenu { display: none; }
+  .nav-list li.has-children.open .submenu { display: block; }
+}
+
+/* ---------- Page shell ---------- */
+
+main {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 6rem;
+}
+
+main.wide { max-width: 60rem; }
+
+.page-eyebrow {
+  color: var(--gold);
+  letter-spacing: 0.3em;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+}
+
+.page-title {
+  font-family: 'Cinzel', 'Georgia', serif;
+  letter-spacing: 0.08em;
+  font-size: 1.9rem;
+  color: #f2ede0;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0 0 1.5rem;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--gold);
+  letter-spacing: 0.28em;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+main p { color: var(--text); }
+main h2 {
+  font-family: 'Cinzel', 'Georgia', serif;
+  letter-spacing: 0.04em;
+  font-size: 1.2rem;
+  color: #f2ede0;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 2.5rem 0 1rem;
+}
+
+.empty-state {
+  color: var(--text-dim);
+  font-style: italic;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+  border: 1px dashed var(--border);
+  text-align: center;
+  border-radius: 2px;
+}
+
+/* ---------- Annals timeline ---------- */
+
+.timeline {
+  position: relative;
+  border-left: 1px solid var(--border);
+  padding-left: 2rem;
+}
+
+.entry { position: relative; margin-bottom: 2.75rem; }
+
+.entry::before {
+  content: '';
+  position: absolute;
+  left: -2.42rem;
+  top: 0.35rem;
+  width: 9px;
+  height: 9px;
+  background: var(--bg);
+  border: 1.5px solid var(--gold);
+  transform: rotate(45deg);
+}
+
+.entry-date {
+  font-family: 'Courier New', monospace;
+  font-size: 0.78rem;
+  color: var(--gold-dim);
+  letter-spacing: 0.06em;
+}
+
+.entry-cat {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: 0.1rem 0.5rem;
+  margin-left: 0.6rem;
+  border-radius: 2px;
+}
+
+.entry h2 {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #f2ede0;
+  margin: 0.5rem 0 0.5rem;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  font-family: 'Georgia', serif;
+}
+
+.entry p { color: var(--text-dim); font-size: 0.94rem; margin: 0; }
+
+/* ---------- Resource cards ---------- */
+
+.resource-group { margin-bottom: 3rem; }
+
+.resource-group-title {
+  font-family: 'Courier New', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin: 0 0 1.25rem;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+.resource-card {
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  padding: 1.25rem 1.4rem;
+}
+
+.resource-card h3 {
+  font-family: 'Georgia', serif;
+  font-size: 1.02rem;
+  color: #f2ede0;
+  margin: 0 0 0.5rem;
+  font-weight: 400;
+}
+
+.resource-card p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin: 0 0 1rem;
+}
+
+.resource-card a {
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--gold-dim);
+  padding: 0.45rem 0.8rem;
+  display: inline-block;
+}
+
+.resource-card a:hover { border-color: var(--gold); }
+
+/* ---------- Gallery ---------- */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
+
+.gallery-caption {
+  padding: 0.75rem 1rem;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+/* ---------- Contact form ---------- */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 32rem;
+}
+
+.contact-form label {
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: 'Georgia', serif;
+  font-size: 0.95rem;
+  padding: 0.65rem 0.8rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--gold-dim);
+}
+
+.contact-form button {
+  align-self: flex-start;
+  background: none;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: 'Courier New', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.6rem;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+/* ---------- Home quick links ---------- */
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.quick-link {
+  display: block;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  padding: 1.25rem 1.4rem;
+  color: var(--text);
+}
+
+.quick-link:hover { border-color: var(--gold-dim); }
+
+.quick-link .ql-label {
+  font-family: 'Courier New', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem 3.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+footer span { color: var(--gold-dim); }
