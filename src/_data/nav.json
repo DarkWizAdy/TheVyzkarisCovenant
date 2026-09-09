@@ -1,5 +1,6 @@
 [
   { "label": "Home", "url": "/" },
+  { "label": "Records", "url": "/records/" },
   { "label": "Announcements", "url": "/announcements/" },
   {
     "label": "Governance",

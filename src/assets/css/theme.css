@@ -337,7 +337,7 @@ main h2 {
   color: var(--bg);
 }
 
-/* ---------- Announcements timeline ---------- */
+/* ---------- Timeline (Records / Announcements) ---------- */
 
 .timeline {
   position: relative;
