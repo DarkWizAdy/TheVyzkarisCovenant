@@ -572,4 +572,4 @@ footer {
 }
 
 footer span { color: var(--gold-dim); }
-footer .motto { font-family: 'Cinzel', 'Georgia', serif; }
+footer .motto { font-family: 'Cinzel', 'Georgia', serif; font-size: 1.1rem; }
