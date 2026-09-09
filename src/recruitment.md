@@ -1,7 +1,7 @@
 ---
 title: Recruitment
 description: How the Vyzkaris Covenant evaluates and admits new members.
-layout: layouts/base.njk
+layout: layouts/standalone.njk
 ---
 
 <p class="page-eyebrow">For Prospective Citizens</p>
