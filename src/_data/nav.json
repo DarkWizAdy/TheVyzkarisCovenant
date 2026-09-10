@@ -3,16 +3,18 @@
   { "label": "Records", "url": "/records/" },
   { "label": "Announcements", "url": "/announcements/" },
   {
-    "label": "Governance",
+    "label": "Important Documents",
     "children": [
-      { "label": "Charter", "url": "/governance/charter/" },
-      { "label": "Structure", "url": "/governance/structure/" },
-      { "label": "Legion", "url": "/governance/legion/" },
-      { "label": "Territory", "url": "/governance/territory/" },
-      { "label": "Diplomacy", "url": "/governance/diplomacy/" },
-      { "label": "Judiciary", "url": "/governance/judiciary/" },
-      { "label": "Recruitment", "url": "/governance/recruitment/" },
-      { "label": "Enterprise", "url": "/governance/enterprise/" }
+      { "label": "Charter", "url": "/documents/charter/" },
+      { "label": "Constitution", "url": "/documents/constitution/" },
+      { "label": "Governance Doctrine", "url": "/documents/governance-doctrine/" },
+      { "label": "Internal Doctrine", "url": "/documents/internal-doctrine/" },
+      { "label": "Military Doctrine", "url": "/documents/military-doctrine/" },
+      { "label": "Security and Intelligence Doctrine", "url": "/documents/security-doctrine/" },
+      { "label": "Territorial Doctrine", "url": "/documents/territorial-doctrine/" },
+      { "label": "Diplomacy Doctrine", "url": "/documents/diplomacy-doctrine/" },
+      { "label": "Judiciary Doctrine", "url": "/documents/judiciary-doctrine/" },
+      { "label": "Kingdom-Enterprise Doctrine", "url": "/documents/kingdom-enterprise-doctrine/" }
     ]
   },
   { "label": "Resources", "url": "/resources/" },

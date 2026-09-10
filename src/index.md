@@ -33,7 +33,7 @@ wide: true
     <span class="ql-label">Latest</span>
     Announcements
   </a>
-  <a class="quick-link" href="{{ '/governance/charter/' | url }}">
+  <a class="quick-link" href="{{ '/documents/charter/' | url }}">
     <span class="ql-label">Founding</span>
     The Charter
   </a>
