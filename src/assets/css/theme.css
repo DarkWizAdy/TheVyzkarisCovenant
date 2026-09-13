@@ -102,7 +102,7 @@ a:hover { color: #f2ede0; }
 }
 
 .nav-inner {
-  max-width: 60rem;
+  max-width: 78rem;
   margin: 0 auto;
   padding: 0 1.5rem;
   display: flex;
@@ -144,10 +144,10 @@ a:hover { color: #f2ede0; }
   display: block;
   font-family: 'Courier New', monospace;
   font-size: 1.08rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-dim);
-  padding: 0.75rem 0.85rem;
+  padding: 0.75rem 0.65rem;
 }
 
 .nav-list a:hover,
